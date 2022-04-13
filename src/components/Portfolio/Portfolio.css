@@ -1,0 +1,27 @@
+.portfolio {
+    padding: 0 70px 120px;
+}
+
+.portfolio__heading {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    color: #A0A0A0;
+    margin: 0 0 50px;
+    padding: 0;
+}
+
+.portfolio__link {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 50px;
+    border-bottom: 1px solid #E8E8E8;
+    margin: 0 0 20px;
+    padding: 0 0 19px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.portfolio__link:nth-last-of-type(1) {
+    margin: 0;
+}

@@ -3,14 +3,13 @@ import { Button } from '../Button/Button';
 import { Link } from "../Link/Link";
 import './Header.css';
 
-
 export const Header = () => {
   return (
     <header className="header">
-      <img className="header__logo" alt="logo" src={HeaderLogo} />
+      <Link to="/"><img className="header__logo" alt="logo" src={HeaderLogo}/></Link>
       <div className="header__container">
-        <Link to="/sign-in" className="header__link">Регистрация</Link>   
-        <Button className="header__button">Войти</Button>
+        <Link to="/sign-up" className="header__link">Регистрация</Link>   
+        <Button to="/sign-in" className="header__button">Войти</Button>
       </div>
     </header>
   );
