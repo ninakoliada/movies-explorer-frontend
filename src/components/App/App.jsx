@@ -1,13 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { Header } from '../Header/Header';
 import { Main } from '../Main/Main';
 import { Movies } from '../Movies/Movies';
 import { SavedMovies } from '../SavedMovies/SavedMovies';
 import { Profile } from '../Profile/Profile';
 import { Register } from '../Register/Register';
 import { Login } from '../Login/Login';
-import { Footer } from '../Footer/Footer';
 
 import './App.css';
 
@@ -15,7 +13,6 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header />
         <Switch>
           <Route path="/" exact>
             <Main />
@@ -29,14 +26,13 @@ function App() {
           <Route path="/profile">
             <Profile />
           </Route>
-          <Route path="/sign-in">
+          <Route path="/sign-up">
             <Register />
           </Route>
-          <Route path="/sign-up">
+          <Route path="/sign-in">
             <Login />
           </Route>
         </Switch>
-        <Footer />
       </div>
     </BrowserRouter>
   );

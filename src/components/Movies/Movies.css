@@ -1,0 +1,18 @@
+.movies {
+    padding: 0 70px;
+}
+
+.movies__button-container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.movies__button {
+    margin: 50px 0 80px;
+    width: 320px;
+    height: 36px;
+    background-color: #F9F9F9;
+    color: #000;
+    text-align: center;
+}

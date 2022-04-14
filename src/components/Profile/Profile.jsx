@@ -1,7 +1,14 @@
+import { Header } from "../Header/Header";
+
+import "./Profile.css";
+
 export const Profile = () => {
     return (
-        <main>
-           
+        <>
+        <Header />
+        <main className="profile">
+          
         </main>
+        </>
     )
 }
