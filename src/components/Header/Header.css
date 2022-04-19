@@ -3,11 +3,13 @@
     display: flex;
     justify-content: space-between;
     padding: 18px 70px;
-    background-color: #F3C1F8;
+    background-color: #FFF;
 }
 
 .header__container {
     justify-content: space-between;
+    align-items: center;
+    display: flex;
 }
 
 .header__logo {
@@ -17,4 +19,29 @@
 
 .header__link {
     margin-right: 30px;
+}
+
+.header__account_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__link_movies {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 0 0 0 44px;
+}
+
+.header__link_save-movies {
+    font-weight: 400;
+    margin: 0 0 0 16px;
+}
+
+.header__account_logo {
+    padding: 10px;
+    background-color: #F9F9F9;
+    border-radius: 6px;
+    margin: 0 0 0 13px;
 }

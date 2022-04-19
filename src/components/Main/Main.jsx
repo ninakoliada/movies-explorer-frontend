@@ -6,11 +6,12 @@ import { AboutMe } from "../AboutMe/AboutMe";
 import { Portfolio } from "../Portfolio/Portfolio";
 import { Footer } from "../Footer/Footer";
 
+import "./Main.css";
 
 export const Main = () => {
     return (
         <main>
-            <Header />
+            <Header className="main__header"/>
             <Promo />
             <AboutProject />
             <Techs />
