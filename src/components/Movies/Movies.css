@@ -1,11 +1,12 @@
 .movies {
     padding: 0 70px;
+    display: grid;
+    gap: 24px;
 }
 
 .movies__button-container {
     display: flex;
     justify-content: center;
-    
 }
 
 .movies__button {
@@ -15,4 +16,10 @@
     background-color: #F9F9F9;
     color: #000;
     text-align: center;
+}
+
+.movies__container {
+    display: grid;
+    gap: 37px 24px;
+    grid-template-columns: 1fr 1fr 1fr;
 }

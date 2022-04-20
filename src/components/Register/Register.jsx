@@ -1,5 +1,6 @@
 import Logo from "../../images/header-logo.svg";
 import { Button } from "../Button/Button";
+import { Input } from "../Input/Input";
 import { Link } from "../Link/Link";
 import "./Register.css";
 
@@ -7,25 +8,20 @@ import "./Register.css";
 export const Register = () => {
     return (
         <main className="register">
-            <div className="register__container">
+            <form className="register__container">
                 <Link to="/"><img className="register__logo" alt="лого" src={Logo} /></Link>
                 <h1 className="register__heading">Добро пожаловать!</h1>
-
-                <label className="register__text" id="name">Имя</label>
-                <input className="register__input" id="name" type="text"></input>
-
-                <label className="register__text" id="email">E-mail</label>
-                <input className="register__input" id="email" type="email"></input>
-
-                <label className="register__text" id="password">Пароль</label>
-                <input className="register__input" id="password" type="password"></input>
+                
+                <Input className="register__input" id="name" name="name" type="text" variant="default" label="Имя" />
+                <Input className="register__input" id="email" name="email" type="email" variant="default" label="E-mail" />
+                <Input className="register__input" id="password" name="password" type="password" variant="default" label="Пароль" />
 
                 <Button className="register__button">Войти</Button>
                 <div className="register__link-container">
                     <p className="register__link-text">Уже зарегистрированы?</p>
                     <Link to="/sign-in" className="register__link">Войти</Link>
                 </div>
-            </div>
+            </form>
         </main>
     )
 }

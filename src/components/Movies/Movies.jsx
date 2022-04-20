@@ -12,7 +12,20 @@ export const Movies = () => {
             <Header />
             <main className="movies">
                 <SearchForm />
-                <MoviesCard />
+                <div className="movies__container">
+                    <MoviesCard />
+                    <MoviesCard />
+                    <MoviesCard />
+                    <MoviesCard />
+                    <MoviesCard />
+                    <MoviesCard />
+                    <MoviesCard />
+                    <MoviesCard />
+                    <MoviesCard />
+                    <MoviesCard />
+                    <MoviesCard />
+                    <MoviesCard />
+                </div>
                 <div className="movies__button-container">
                     <Button className="movies__button">Ещё</Button>
                 </div>

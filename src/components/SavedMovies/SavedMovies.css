@@ -1,3 +1,9 @@
 .savedMovies {
     padding: 0 70px;
 }
+
+.savedMovies__container {
+    display: grid;
+    gap: 37px 24px;
+    grid-template-columns: 1fr 1fr 1fr;
+}

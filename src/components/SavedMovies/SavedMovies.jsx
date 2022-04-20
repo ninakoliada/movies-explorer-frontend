@@ -12,12 +12,16 @@ export const SavedMovies = () => {
             <Header />
             <main className="savedMovies">
                 <SearchForm />
-                <MoviesCard />
+                <div className="savedMovies__container">
+                    <MoviesCard isSaved />
+                    <MoviesCard isSaved />
+                    <MoviesCard isSaved />
+                </div>
                 <div className="movies__button-container">
                     <Button className="movies__button">Ещё</Button>
                 </div>
-                <Footer />
             </main>
+            <Footer />
         </>
     )
 }
