@@ -35,3 +35,55 @@
     font-size: 12px;
     line-height: 16px;
 }
+
+@media screen and (max-width: 810px) {
+    .promo {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        padding-top: 140px;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    .promo__title {
+        margin: 48px 0 22px;
+        font-size: 40px;
+        line-height: 50px;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    .promo__subtitle {
+        margin: 0 auto;
+        margin-bottom: 92px;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    .promo {
+       padding: 70px 10px 30px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .promo__image{
+       width: 210px;
+       height: 206px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .promo__title {
+        margin: 44px 0 24px;
+        font-size: 30px;
+        line-height: 38px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .promo__subtitle {
+        margin-bottom: 80px;
+    }
+}

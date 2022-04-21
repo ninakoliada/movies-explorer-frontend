@@ -53,3 +53,108 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.about-me__info-container:nth-last-of-type(2) {
+    margin-right: 50px;
+}
+
+@media screen and (max-width: 810px) {
+    .about-me {
+        padding: 90px 50px;
+    }    
+}
+
+@media screen and (max-width: 810px) {
+    .about-me__heading {
+        padding-bottom: 19px;
+    } 
+}
+
+@media screen and (max-width: 810px) {
+    .about-me__name {
+        font-size: 40px;
+        line-height: 40px;
+        margin-bottom: 16px;
+    } 
+}
+
+@media screen and (max-width: 810px) {
+    .about-me__profession {
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom: 20px;
+    } 
+}
+
+@media screen and (max-width: 810px) {
+    .about-me__about {
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom: 87px;
+    } 
+}
+
+@media screen and (max-width: 810px) {
+    .aboute-me__avatar {
+       width: 255px;
+       height: 307px;
+    } 
+}
+
+@media screen and (max-width: 550px) {
+    .about-me {
+        padding: 70px 14px;
+    }    
+}
+
+@media screen and (max-width: 550px) {
+    .about-me__heading {
+        padding-bottom: 28px;
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 60px;
+    } 
+}
+
+@media screen and (max-width: 550px) {
+    .about-me__info {
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .aboute-me__avatar {
+       width: 292px;
+       height: 352px;
+       margin-bottom: 40px;
+    } 
+}
+
+@media screen and (max-width: 550px) {
+    .about-me__name {
+        font-size: 30px;
+        line-height: 36px;
+        margin-bottom: 20px;
+    } 
+}
+
+@media screen and (max-width: 550px) {
+    .about-me__profession {
+        font-size: 11px;
+        line-height: 16px;
+    } 
+}
+
+@media screen and (max-width: 550px) {
+    .about-me__about {
+        font-size: 11px;
+        line-height: 16px;
+        margin-bottom: 40px;
+    } 
+}
+    
+@media screen and (max-width: 550px) {
+    .about-me__info-container:nth-last-of-type(2) {
+        margin-right: 0px;
+    }
+}

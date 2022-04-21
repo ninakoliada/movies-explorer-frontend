@@ -45,3 +45,39 @@
     border-radius: 6px;
     margin: 0 0 0 13px;
 }
+
+.header__menu-touch {
+    background-color: unset;
+    background-image: url("../../images/menu-touch.svg");
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    background-size: contain;
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 43px;
+}
+
+@media screen and (max-width: 810px) {
+    .header {
+        padding: 18px 30px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .header {
+        padding: 18px 14px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .header__desktop {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 550px) {
+    .header__menu-touch {
+        display: none;
+    }
+}

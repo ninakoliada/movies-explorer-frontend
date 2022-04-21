@@ -11,7 +11,7 @@ export const Promo = () => {
                 <p className="promo__subtitle">Листайте ниже, чтобы узнать больше про этот проект и его создателя.</p>
                 <Button className="promo__button">Узнать больше</Button>
             </div>
-            <img alt="wed-world" src={WebWorld} />
+            <img className="promo__image" alt="wed-world" src={WebWorld} />
         </section>
     )
 }

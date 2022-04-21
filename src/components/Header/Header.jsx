@@ -22,13 +22,13 @@ export const Header = (props) => {
           <Route path="*">
             <div className="header__container">
               <Link to="/"><img className="header__logo" alt="logo" src={HeaderLogo}/></Link>
-              <Link to="/movies" className="header__link_movies">Фильмы</Link>
-              <Link to="/saved-movies" className="header__link_movies header__link_save-movies">Сохраненные фильмы</Link>
+              <Link to="/movies" className="header__link_movies header__desktop">Фильмы</Link>
+              <Link to="/saved-movies" className="header__link_movies header__link_save-movies header__desktop">Сохраненные фильмы</Link>
             </div>
-              <Link to="/profile" className="header__account_link">Аккаунт <img className="header__account_logo" alt="иконка аккаунта" src={AccountLogo} /></Link>
+              <Link to="/profile" className="header__account_link header__desktop">Аккаунт <img className="header__account_logo" alt="иконка аккаунта" src={AccountLogo} /></Link>
+              <Button className="header__menu-touch"/>
           </Route>
         </Switch>
- 
     </header>
   );
 };

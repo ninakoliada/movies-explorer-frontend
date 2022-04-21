@@ -7,8 +7,8 @@ export const Portfolio = () => {
         <section className="portfolio">
              <h2 className="portfolio__heading">Портфолио</h2>
              <Link className="portfolio__link">Статичный сайт<img className="portfolio__link_image" alt="стрелочка" src={PortfolioPointer}/></Link>
-             <Link className="portfolio__link">Адаптивный сайт<img alt="стрелочка" src={PortfolioPointer}/></Link>
-             <Link className="portfolio__link">Одностраничное приложение<img alt="стрелочка" src={PortfolioPointer}/></Link>
+             <Link className="portfolio__link">Адаптивный сайт<img className="portfolio__link_image" alt="стрелочка" src={PortfolioPointer}/></Link>
+             <Link className="portfolio__link">Одностраничное приложение<img className="portfolio__link_image" alt="стрелочка" src={PortfolioPointer}/></Link>
         </section>
     )
 }

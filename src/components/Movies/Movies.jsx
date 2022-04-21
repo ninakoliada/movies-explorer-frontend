@@ -10,8 +10,8 @@ export const Movies = () => {
     return (
         <>
             <Header />
+            <SearchForm />
             <main className="movies">
-                <SearchForm />
                 <div className="movies__container">
                     <MoviesCard />
                     <MoviesCard />
@@ -29,8 +29,8 @@ export const Movies = () => {
                 <div className="movies__button-container">
                     <Button className="movies__button">Ещё</Button>
                 </div>
-                <Footer />
             </main>
+            <Footer />
         </>
     )
         
