@@ -8,9 +8,9 @@ export const Footer = () => {
             <div className="footer__info">
                 <p className="footer__year">© 2022</p>
                 <div className="footer__container">
-                    <Link className="footer__link">Яндекс.Практикум</Link>
-                    <Link className="footer__link">Github</Link>
-                    <Link className="footer__link">Facebook</Link>
+                    <Link href="https://practicum.yandex.ru" target="_blank" className="footer__link">Яндекс.Практикум</Link>
+                    <Link href="https://github.com" target="_blank" className="footer__link">Github</Link>
+                    <Link href="https://facebook.com" target="_blank" className="footer__link">Facebook</Link>
                 </div>
             </div>
         </footer>

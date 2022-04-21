@@ -22,13 +22,13 @@ export const SearchForm = () => {
                     <Button className="searchForm__button">Найти</Button>
                     <div className="searchForm__stick searchForm__desktop-filters"></div>
                     <FilterCheckbox className="searchForm__checkbox searchForm__desktop-filters" id="filter" checked={checkboxActive} onClick={onClickCheckbox} />
-                    <label className="searchForm__filter-text searchForm__desktop-filters" for="filter">Короткометражки</label>
+                    <label className="searchForm__filter-text searchForm__desktop-filters" htmlFor="filter">Короткометражки</label>
                 </div>
             </div>
 
             <div className="searchForm__touch-filters">
                 <FilterCheckbox className="searchForm__checkbox" id="filter" checked={checkboxActive} onClick={onClickCheckbox} />
-                <label className="searchForm__filter-text" for="filter">Короткометражки</label>
+                <label className="searchForm__filter-text" htmlFor="filter">Короткометражки</label>
             </div>
 
             <div className="searchForm__long-stick"></div>

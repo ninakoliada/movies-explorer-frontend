@@ -29,9 +29,7 @@
     .movies {
         padding: 0 30px 80px;
     }
-}
 
-@media screen and (max-width: 810px) {
     .movies__container {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px; 
@@ -42,12 +40,14 @@
     .movies {
         padding: 0 10px 80px;
     }
-}
 
-@media screen and (max-width: 550px) {
     .movies__container {
         grid-template-columns: 1fr;
         gap: 14px;
         margin: 0 auto;
+    }
+
+    .movies__button {
+        width: 240px;
     }
 }

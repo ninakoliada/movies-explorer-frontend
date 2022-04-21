@@ -47,41 +47,31 @@
     .footer {
         padding: 79px 10px 10px;
     }
-}
 
-@media screen and (max-width: 600px) {
     .footer__info {
         flex-direction: column-reverse;
         align-items: center;
         text-align: center;
-}
-}
+    }
 
-@media screen and (max-width: 600px) {
     .footer__container {
         display: flex;
         flex-direction: column;
     }
-}
 
-@media screen and (max-width: 600px) {
     .footer__text {
         font-size: 12px;
         line-height: 15px;
         margin-bottom: 21px;
         padding-bottom: 30px;
     }
-}
 
-@media screen and (max-width: 600px) {
     .footer__link {
         margin: 0 0 12px;
         font-size: 12px;
         line-height: 15px;
     }
-}
 
-@media screen and (max-width: 600px) {
     .footer__year {
         margin-top: 30px;
         color: #A0A0A0;

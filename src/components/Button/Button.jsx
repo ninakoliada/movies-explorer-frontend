@@ -4,6 +4,14 @@ import "./Button.css";
 export const Button = (props) => {
     const className = `button ${props.className ? props.className : ''}`;
 
+    if (props.href) {
+        return (
+            <a href={props.href}>
+                <button {...props} className={className} />
+            </a>
+        )
+    }
+
     if (props.to) {
         return (
             <Link to={props.to}>

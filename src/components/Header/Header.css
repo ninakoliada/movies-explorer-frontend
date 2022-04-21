@@ -64,19 +64,17 @@
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 770px) {
     .header {
         padding: 18px 14px;
     }
-}
 
-@media screen and (max-width: 550px) {
     .header__desktop {
         display: none;
     }
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 770px) {
     .header__menu-touch {
         display: none;
     }

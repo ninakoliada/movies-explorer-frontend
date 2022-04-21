@@ -16,8 +16,8 @@ export const AboutMe = () => {
                         Недавно начал кодить. С 2015 года работал в компании «СКБ Контур». 
                         После того, как прошёл курс по веб-разработке, начал заниматься фриланс-заказами и ушёл с постоянной работы.
                     </p>
-                    <Link className="about-me__link">Facebook</Link>
-                    <Link className="about-me__link">Github</Link>
+                    <Link href="https://facebook.com" target="_blank" className="about-me__link">Facebook</Link>
+                    <Link href="https://github.com" target="_blank" className="about-me__link">Github</Link>
                 </div>
                 <div className="about-me__info-container">
                     <img className="aboute-me__avatar" alt="аватар" src={Avatar} />

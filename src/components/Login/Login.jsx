@@ -9,7 +9,7 @@ export const Login = () => {
     return (
         <main className="login">
            <form className="login__container">
-                <Link to="/"><img className="login__logo" alt="лого" src={Logo} /></Link>
+                <Link className="login__logo-link" to="/"><img className="login__logo" alt="лого" src={Logo} /></Link>
                 <h1 className="login__heading">Рады видеть!</h1>
 
                 <Input className="login__input" id="email" name="email" type="email" variant="default" label="E-mail" />
