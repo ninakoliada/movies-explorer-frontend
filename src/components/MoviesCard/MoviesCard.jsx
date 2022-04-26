@@ -1,24 +1,27 @@
-import cardImage from "../../images/card-image-1.png";
 import EmptyLike from "../../images/card-empty-like.svg";
 import FilledLike from "../../images/card-filled-like.svg";
 import DeleteImage from "../../images/save-movies-delete-image.svg";
 
 import "./MoviesCard.css";
 
-export const MoviesCard = (props) => {
+export const MoviesCard = ({ isSaved, isLiked, imageSrc, name, duration, href }) => {
+    function onClickLike (event) {
+        event.preventDefault();
+    }
+
     return (
-        <div className="card">
-            <img className="card__image" alt="карточка" src={cardImage} />
+        <a className="card" href={href} target="_blank" rel="noreferrer">
+            <img className="card__image" alt="карточка" src={imageSrc} />
             <div className="card__description">
-                <p className="card__description-name">33 слова о дизайне</p>
-                <button className="card__like-button">
-                    {props.isSaved
+                <p className="card__description-name">{name}</p>
+                <button className="card__like-button" onClick={onClickLike}>
+                    {isSaved
                         ? <img className="card__delete_image" alt="крестик" src={DeleteImage} />
-                        : <img className="card__description-like" alt="лайк" src={props.isLiked ? FilledLike : EmptyLike} />
+                        : <img className="card__description-like" alt="лайк" src={isLiked ? FilledLike : EmptyLike} />
                     }
                 </button>
             </div>
-            <p className="card__movie-time">1ч 47м</p>
-        </div>
+            <p className="card__movie-time">{duration}</p>
+        </a>
     );
 }
