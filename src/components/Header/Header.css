@@ -1,0 +1,81 @@
+.header {
+    max-height: 74px;
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 70px;
+    background-color: #FFF;
+}
+
+.header__container {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.header__logo {
+    width: 38px;
+    height: 38px;
+}
+
+.header__link {
+    margin-right: 30px;
+}
+
+.header__account_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__link_movies {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 0 0 0 44px;
+}
+
+.header__link_save-movies {
+    font-weight: 400;
+    margin: 0 0 0 16px;
+}
+
+.header__account_logo {
+    padding: 10px;
+    background-color: #F9F9F9;
+    border-radius: 6px;
+    margin: 0 0 0 13px;
+}
+
+.header__menu-touch {
+    background-color: unset;
+    background-image: url("../../images/menu-touch.svg");
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    background-size: contain;
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 43px;
+}
+
+@media screen and (max-width: 810px) {
+    .header {
+        padding: 18px 30px;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .header {
+        padding: 18px 14px;
+    }
+
+    .header__desktop {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 770px) {
+    .header__menu-touch {
+        display: none;
+    }
+}
