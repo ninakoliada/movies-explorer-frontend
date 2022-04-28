@@ -1,5 +1,4 @@
 import { useCallback, useState } from "react";
-import { useHistory } from "react-router-dom";
 import { useFormWithValidation } from "../../hooks/useForm";
 import Logo from "../../images/header-logo.svg";
 import { signIn, signUp } from "../../utils/MainApi";
@@ -9,8 +8,7 @@ import { Link } from "../Link/Link";
 import "./Register.css";
 
 
-export const Register = () => {
-    const history = useHistory();
+export const Register = ({ onSuccess }) => {
     const { values, isValid, errors, handleChange } = useFormWithValidation();
     const [failedStatus, setFailedStatus] = useState(null);
     
@@ -37,7 +35,7 @@ export const Register = () => {
                 return signIn({ email: values.email, password: values.password });
             })
             .then(() => {
-                history.replace('/movies');
+                onSuccess();
             })
             .catch((err) => {
                 setFailedStatus(err.code)

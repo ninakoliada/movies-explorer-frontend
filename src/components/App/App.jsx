@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Switch, Route, useHistory, useLocation } from 'react-router-dom';
 import { Main } from '../Main/Main';
 import { Movies } from '../Movies/Movies';
@@ -66,6 +66,11 @@ function App() {
 
   }, [history, location.pathname]);
 
+  const onSuccess = useCallback(() => {
+    setLoggedIn(true);
+    history.push('/movies');
+  }, [history]);
+
   return (
     <UserProvider value={{ user, setUserData: setUser }}>
       <MoviesProvider value={movies}>
@@ -85,10 +90,10 @@ function App() {
                 <Profile />
               </ProtectedRoute>
               <Route path="/sign-up">
-                <Register />
+                <Register onSuccess={onSuccess} />
               </Route>
               <Route path="/sign-in">
-                <Login />
+                <Login onSuccess={onSuccess} />
               </Route>
               <Route path="*">
                 <NotFound />

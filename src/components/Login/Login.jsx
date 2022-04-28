@@ -1,5 +1,4 @@
 import { useCallback, useState } from "react";
-import { useHistory } from "react-router-dom";
 
 import { Button } from "../Button/Button";
 import { Link } from "../Link/Link";
@@ -11,8 +10,7 @@ import { useFormWithValidation } from "../../hooks/useForm";
 
 import "./Login.css";
 
-export const Login = () => {
-    const history = useHistory();
+export const Login = ({ onSuccess }) => {
     const { values, isValid, errors, handleChange } = useFormWithValidation();
     const [failedStatus, setFailedStatus] = useState(null);
     
@@ -21,7 +19,7 @@ export const Login = () => {
 
         signIn(values)
             .then(() => {
-                history.push('/movies');
+                onSuccess();
             })
             .catch(error => {
                 if (error.code === 401) {
