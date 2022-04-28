@@ -16,7 +16,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "scp -r build\\* pinakoladda@193.32.218.31:/home/pinakoladda/movies-explorer-frontend"
   },
   "eslintConfig": {
     "extends": [
