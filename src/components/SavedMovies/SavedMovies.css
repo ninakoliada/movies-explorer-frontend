@@ -8,6 +8,12 @@
     grid-template-columns: repeat(3, 1fr);
 }
 
+.savedMovies__notFound {
+    text-align: center;
+    font-size: 18px;
+    line-height: 20px;
+}
+
 @media screen and (max-width: 1000px) {
     .savedMovies {
         padding: 0 30px 170px;

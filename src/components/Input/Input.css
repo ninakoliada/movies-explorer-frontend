@@ -43,3 +43,19 @@
     font-size: 11px;
     line-height: 13px;
 }
+
+.input_error,
+.input_error::placeholder {
+    color: #FF4062;
+}
+
+.input_error::placeholder {
+    opacity: 0.5;
+}
+
+.input__error {
+    color: #FF4062;
+    margin: 10px 0 0;
+    font-size: 10px;
+    line-height: 12px;
+}

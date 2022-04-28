@@ -4,9 +4,13 @@ import DeleteImage from "../../images/save-movies-delete-image.svg";
 
 import "./MoviesCard.css";
 
-export const MoviesCard = ({ isSaved, isLiked, imageSrc, name, duration, href }) => {
+export const MoviesCard = ({ isSaved, isLiked, imageSrc, name, duration, href, onLike }) => {
+    const hours = Math.floor(duration / 60);
+    const minutes = duration % 60;
+
     function onClickLike (event) {
         event.preventDefault();
+        onLike()
     }
 
     return (
@@ -21,7 +25,7 @@ export const MoviesCard = ({ isSaved, isLiked, imageSrc, name, duration, href })
                     }
                 </button>
             </div>
-            <p className="card__movie-time">{duration}</p>
+            <p className="card__movie-time">{hours > 0 ? `${hours}ч` : ''} {minutes}м</p>
         </a>
     );
 }

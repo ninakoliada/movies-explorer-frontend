@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./Button.css";
 
 export const Button = (props) => {
-    const className = `button ${props.className ? props.className : ''}`;
+    const className = `button ${props.className ? props.className : ''} ${props.disabled ? 'button_disabled' : ''}`;
 
     if (props.href) {
         return (
