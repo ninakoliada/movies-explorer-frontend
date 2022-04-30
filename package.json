@@ -10,13 +10,15 @@
     "react-dom": "^18.0.0",
     "react-router-dom": "^5.3.0",
     "react-scripts": "5.0.0",
+    "validator": "^13.7.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "scp -r build\\* pinakoladda@193.32.218.31:/home/pinakoladda/movies-explorer-frontend"
   },
   "eslintConfig": {
     "extends": [

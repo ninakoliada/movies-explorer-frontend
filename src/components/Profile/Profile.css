@@ -56,6 +56,13 @@
     margin: 16px 0 0;
 }
 
+.profile__popup {
+    padding: 40px;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 500;
+}
+
 @media screen and (max-width: 550px) {
     .profile {
         padding: 70px 30px 40px;

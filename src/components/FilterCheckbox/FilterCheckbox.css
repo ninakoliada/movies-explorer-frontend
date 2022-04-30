@@ -1,6 +1,5 @@
 .filter-checkbox {
     display: none;
-
 }
 
 .filter-checkbox__decoration {
@@ -15,7 +14,6 @@
     cursor: pointer;
     position: relative;
     transition-duration: 300ms;
-
 }
 
 .filter-checkbox__decoration::after {
@@ -37,4 +35,8 @@
 
 .filter-checkbox__decoration-on::after {
     left: 18px;
+}
+
+.filter-checkbox__input {
+    display: none;
 }
