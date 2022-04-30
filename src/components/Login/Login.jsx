@@ -1,4 +1,5 @@
 import { useCallback, useState } from "react";
+import isEmail from 'validator/lib/isEmail';
 
 import { Button } from "../Button/Button";
 import { Link } from "../Link/Link";
@@ -11,7 +12,7 @@ import { useFormWithValidation } from "../../hooks/useForm";
 import "./Login.css";
 
 export const Login = ({ onSuccess }) => {
-    const { values, isValid, errors, handleChange } = useFormWithValidation();
+    const { values, isValid, errors, handleChange } = useFormWithValidation([{ name: 'email', check: isEmail }]);
     const [failedStatus, setFailedStatus] = useState(null);
     
     function onSubmit (event) {

@@ -1,18 +1,17 @@
 import { useCallback, useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
 import { useUserData } from "../../contexts/User";
 import { useFormWithValidation } from "../../hooks/useForm";
-import { signOut, updateMe } from "../../utils/MainApi";
+import { updateMe } from "../../utils/MainApi";
 import { Button } from "../Button/Button";
 import { Header } from "../Header/Header";
 import { Input } from "../Input/Input";
 import { Popup } from "../Popup/Popup";
+import isEmail from 'validator/lib/isEmail';
 
 import "./Profile.css";
 
-export const Profile = () => {
-    const history = useHistory();
-    const { values, handleChange, isValid, errors, resetForm } = useFormWithValidation();
+export const Profile = ({ onSignout }) => {
+    const { values, handleChange, isValid, errors, resetForm } = useFormWithValidation([{ name: 'email', check: isEmail }]);
     const { user, setUserData } = useUserData();
     const [visiblePopup, setVisiblePopup] = useState(false);
     const [failedMessage, setFailedMessage] = useState(null);
@@ -40,17 +39,11 @@ export const Profile = () => {
         });
     }
 
-    function onSignout () {
-        signOut().then(() => {
-            history.push('/sign-in')
-        });
-    }
-
     const onClosePopup = useCallback(() => {
         setVisiblePopup(false);
     }, [])
 
-    const { name } = user || {};
+    const { name, email } = user || {};
 
     return (
         <>
@@ -70,7 +63,7 @@ export const Profile = () => {
                     </div>
 
                     <div className="profile__button-container">
-                        <Button className="profile__button" disabled={!isValid}>Редактировать</Button>
+                        <Button className="profile__button" disabled={!isValid || (values.name === name  && values.email === email)}>Редактировать</Button>
                         <Button onClick={onSignout} className="profile__button profile__button_red">Выйти из аккаунта</Button>
                     </div>
                 </form>

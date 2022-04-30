@@ -1,4 +1,6 @@
 import { useCallback, useState } from "react";
+import isEmail from 'validator/lib/isEmail';
+
 import { useFormWithValidation } from "../../hooks/useForm";
 import Logo from "../../images/header-logo.svg";
 import { signIn, signUp } from "../../utils/MainApi";
@@ -9,7 +11,7 @@ import "./Register.css";
 
 
 export const Register = ({ onSuccess }) => {
-    const { values, isValid, errors, handleChange } = useFormWithValidation();
+    const { values, isValid, errors, handleChange } = useFormWithValidation([{ name: 'email', check: isEmail }]);
     const [failedStatus, setFailedStatus] = useState(null);
     
     const onChange = useCallback((event) => {

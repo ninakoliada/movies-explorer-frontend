@@ -4,16 +4,22 @@ export function useForm() {
     const [values, setValues] = React.useState({});
 
     const handleChange = (event) => {
+        console.log(event.target);
         const target = event.target;
-        const value = target.value;
+        let value = target.value;
         const name = target.name;
+
+        if (target.type === 'checkbox') {
+            value = event.target.checked;
+        }
+
         setValues({ ...values, [name]: value });
     };
 
     return { values, handleChange, setValues };
 }
 
-export function useFormWithValidation() {
+export function useFormWithValidation(customValidation) {
     const [values, setValues] = React.useState({});
     const [errors, setErrors] = React.useState({});
     const [isValid, setIsValid] = React.useState(false);
@@ -24,7 +30,16 @@ export function useFormWithValidation() {
         const value = target.value;
         setValues({ ...values, [name]: value });
         setErrors({ ...errors, [name]: target.validationMessage });
-        setIsValid(target.closest("form").checkValidity());
+        const defaultValidation = target.closest("form").checkValidity();
+        const customCheck = customValidation && customValidation.find(item => item.name === name);
+
+        if (customCheck && !customCheck.check(value)) {
+            setErrors({ ...errors, [name]: 'Error' });
+            setIsValid(false);
+            return;
+        }
+
+        setIsValid(defaultValidation);
     };
 
     const resetForm = useCallback(

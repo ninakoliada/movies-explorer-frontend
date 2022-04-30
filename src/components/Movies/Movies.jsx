@@ -6,16 +6,20 @@ import { MoviesCard } from "../MoviesCard/MoviesCard"
 import { SearchForm } from "../SearchForm/SearchForm"
 import { Footer } from "../Footer/Footer";
 
-import { useMovies } from "../../contexts/Movies";
-import { MOVIES_HOST } from "../../utils/MoviesApi";
+import { getMovies, MOVIES_HOST } from "../../utils/MoviesApi";
 import { addMovie, removeMovie } from "../../utils/MainApi";
 import { useFavouriteMovies } from "../../contexts/FavouriteMovies";
+import { useForm } from "../../hooks/useForm";
 
 import "./Movies.css";
 
 export const Movies = () => {
-    const localMovies = useMovies();
+    const [localMovies, seLocalMovies] = useState([]);
+    const { values, handleChange, setValues } = useForm();
+
     const { favouriteMovies, updateFavouriteMovies } = useFavouriteMovies();
+
+    const [searchFilters, setSearchFilters ] = useState({});
 
     const [movies, setMovies] = useState([]);
     const [error, setError] = useState(null);
@@ -23,6 +27,28 @@ export const Movies = () => {
     const [page, setPage] = useState(0);
     const [firstPage, setFirstPage] = useState(12);
     const [screenWidth, setScreenWidth] = useState(0);
+
+    useEffect(() => {
+        const data = localStorage.getItem('movies');
+        const chachedSearchFilters = localStorage.getItem('searchMovies');
+
+        if (data) {
+            seLocalMovies(JSON.parse(data));
+        } else {
+            getMovies()
+              .then(data => {
+                seLocalMovies(data);
+                localStorage.setItem('movies', JSON.stringify(data));
+              });
+        }
+
+        if (chachedSearchFilters) {
+            const form = JSON.parse(chachedSearchFilters);
+
+            setSearchFilters(form);
+            setValues(form);
+        }
+    }, []);
 
     const onResizeWindow = useCallback(() => {
         setScreenWidth(document.body.offsetWidth);
@@ -51,15 +77,21 @@ export const Movies = () => {
         }
     }, [onResizeWindow]);
 
-    function onSearch({ search, onlyShort }) {
-        const searchRgx = new RegExp(search);
 
-        if (!search) {
+    useEffect(() => {
+        const { search, onlyShort } = searchFilters;
+        const searchRgx = new RegExp(search, 'i');
+        
+        if (search === '') {
             setError('Нужно ввести ключевое слово');
             setMovies([]);
             return;
         }
 
+        if (!search || !localMovies) {
+            return;
+        }
+        
         const filteredMovies = localMovies
             .filter(({ duration }) => onlyShort ? duration < 40 : true)
             .filter(({ nameRU }) => searchRgx.test(nameRU));
@@ -73,7 +105,12 @@ export const Movies = () => {
         setError(null);
         setPage(1);
         setMovies(filteredMovies);
-    }
+    }, [searchFilters, localMovies]);
+
+    const onSearch = useCallback((form) => {
+        setSearchFilters(form);
+        localStorage.setItem('searchMovies', JSON.stringify(form));
+    }, [])
 
     function onLoadMore () {
         setPage(page+1);
@@ -98,7 +135,7 @@ export const Movies = () => {
     return (
         <>
             <Header />
-            <SearchForm onSubmit={onSearch} />
+            <SearchForm onSubmit={onSearch} onChange={handleChange} search={values.search} onlyShort={values.onlyShort} />
             <main className="movies">
                 {error && <div className="movies__error">{error}</div>}
                 {!error && (
